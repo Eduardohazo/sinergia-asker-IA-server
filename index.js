@@ -177,8 +177,8 @@ wss.on("connection", (ws) => {
     const { userId, prompt } = JSON.parse(message);
     console.log(`Received message from user ${userId}: ${prompt}`);
     try {
-      const response = await fetch("http://localhost:" + PORT + "/api/prompt", {   // On development ***
-        // const response = await fetch("https://sinergia-asker-ia-server.onrender.com", {  // On Production ***
+      // const response = await fetch("http://localhost:" + PORT + "/api/prompt", {   // On development ***
+        const response = await fetch("https://sinergia-asker-ia-server.onrender.com", {  // On Production ***
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ prompt, userId }),
