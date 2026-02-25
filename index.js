@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 5000; // Use the port from .env or default to 3
 // Middleware
 app.use(express.json());
 // const allowedOrigins = ['http://127.0.0.1']; // On Development ***
-const allowedOrigins = ['https://sinergiagdl.com']; // On Production ***
+const allowedOrigins = ['https://sinergiagdl.netlify.app']; // On Production ***
 
 const corsOptions = {
   origin: function (origin, callback) {
