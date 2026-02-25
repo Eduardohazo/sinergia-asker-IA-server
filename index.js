@@ -11,8 +11,8 @@ const PORT = process.env.PORT || 5000; // Use the port from .env or default to 3
 
 // Middleware
 app.use(express.json());
-// const allowedOrigins = ['https://wagox-design.netlify.app']; // On Production ***
-const allowedOrigins = ['http://127.0.0.1']; // On Development ***
+const allowedOrigins = ['https://sinergiagdl.com']; // On Production ***
+// const allowedOrigins = ['http://127.0.0.1']; // On Development ***
 
 const corsOptions = {
   origin: function (origin, callback) {
@@ -177,8 +177,8 @@ wss.on("connection", (ws) => {
     const { userId, prompt } = JSON.parse(message);
     console.log(`Received message from user ${userId}: ${prompt}`);
     try {
-      // const response = await fetch("http://localhost:" + PORT + "/api/prompt", {   // On development ***
-        const response = await fetch("https://sinergia-asker-ia-server.onrender.com", {  // On Production ***
+      const response = await fetch("http://localhost:" + PORT + "/api/prompt", {   // On development ***
+        // const response = await fetch("https://sinergia-asker-ia-server.onrender.com", {  // On Production ***
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ prompt, userId }),
