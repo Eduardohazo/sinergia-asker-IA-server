@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 5000; // Use the port from .env or default to 3
 // Middleware
 app.use(express.json());
 // const allowedOrigins = ['http://127.0.0.1']; // On Development ***
-const allowedOrigins = ['https://sinergiagdl.netlify.app']; // On Production ***
+const allowedOrigins = ['https://sinergiagdl.com']; // On Production ***
 
 const corsOptions = {
   origin: function (origin, callback) {
@@ -26,8 +26,9 @@ const corsOptions = {
   allowedHeaders: ['Content-Type', 'Authorization'], // Add headers if needed
 };
 
-app.use(cors(corsOptions)); // On production ***
 // app.use(cors()); // On Development ***
+app.use(cors(corsOptions)); // On production ***
+
 
 // Environment variables
 const GROQ_API_BASE_URL = process.env.GROQ_API_BASE_URL; // Set in .env
