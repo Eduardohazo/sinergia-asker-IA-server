@@ -3,9 +3,9 @@ import cors from "cors";
 import dotenv from "dotenv";
 import { WebSocketServer } from "ws";
 import Groq from "groq-sdk";
-import { personality } from "/context/personality.js";
-import { stateInstructions } from "/context/stateInstructions.js";
-import { knowledge } from "/context/knowledge.js";
+import { personality } from "./context/personality.js";
+import { stateInstructions } from "./context/stateInstructions.js";
+import { knowledge } from "./context/knowledge.js";
 
 dotenv.config();
 
